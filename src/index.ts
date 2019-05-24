@@ -17,7 +17,7 @@ class ProviderPosgresql {
     const config = Object.assign({
       connectionLimit: 1,
       port: 3306
-    }, opts.resource.config);
+    }, opts);
 
     this.logger.debug('createPool: %o', config);
     this.pool = new Pool(config);
