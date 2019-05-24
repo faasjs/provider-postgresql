@@ -6,16 +6,10 @@ class ProviderPosgresql {
   public logger: Logger;
 
   constructor (opts: {
-    resource: {
-      config: {
-        host: string;
-        user: string;
-        password: string;
-        database: string;
-        [key: string]: any;
-      };
-      [key: string]: any;
-    };
+    host: string;
+    user: string;
+    password: string;
+    database: string;
     [key: string]: any;
   }) {
     this.logger = new Logger('@faasjs/provider-postgresql');
@@ -52,17 +46,14 @@ class ProviderPosgresql {
 }
 
 export default function (opts: {
-  resource: {
-    config: {
-      host: string;
-      user: string;
-      password: string;
-      database: string;
-      [key: string]: any;
-    };
+  config: {
+    host: string;
+    user: string;
+    password: string;
+    database: string;
     [key: string]: any;
   };
   [key: string]: any;
 }) {
-  return new ProviderPosgresql(opts);
+  return new ProviderPosgresql(opts.config);
 }
