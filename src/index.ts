@@ -45,7 +45,7 @@ class ProviderPosgresql {
   }
 }
 
-export default function (opts: {
+export function handler (opts: {
   config: {
     host: string;
     user: string;
